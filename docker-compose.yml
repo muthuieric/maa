@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  db-postgres:
+    image: postgres:16-alpine
+    container_name: ouk_narratives_postgres
+    environment:
+      POSTGRES_DB: narratives_meta
+      POSTGRES_USER: ouk_admin
+      POSTGRES_PASSWORD: ouk_secure_pass_2026
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELE", "pg_isready -U ouk_admin -d narratives_meta"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db-mongo:
+    image: mongo:7-jammy
+    container_name: ouk_narratives_mongo
+    environment:
+      MONGO_INITDB_DATABASE: narratives_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ouk_narratives_api
+    environment:
+      POSTGRES_HOST: db-postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: narratives_meta
+      POSTGRES_USER: ouk_admin
+      POSTGRES_PASSWORD: ouk_secure_pass_2026
+      MONGO_URI: mongodb://db-mongo:27017/narratives_db
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db-postgres
+      - db-mongo
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ouk_narratives_web
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  pgdata:
+  mongodata:
+
