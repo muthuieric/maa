@@ -222,7 +222,6 @@ export default function MapPage() {
                 {/* Qualitative Intervention Notes */}
                 <div className="p-4 bg-savanna-50 border border-savanna-200 rounded-lg text-xs space-y-2 text-savanna-900">
                   <div className="font-bold text-slate-900 flex items-center space-x-1.5">
-                    <MapPin className="w-4 h-4 text-savanna-800" />
                     <span>CBO Intervention Focus:</span>
                   </div>
                   <p className="leading-relaxed">

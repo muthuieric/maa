@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Community Narrative Monitor | Narok & Kajiado Counties',
+  title: 'NenoGuard | Community Narrative Monitor',
   description: 'Community narrative monitoring tool for detecting early warning signals of FGM and child marriage in Swahili and Maa.',
 };
 

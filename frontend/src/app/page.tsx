@@ -40,7 +40,7 @@ export default function HomePage() {
       <footer className="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 space-y-1">
           <p className="font-semibold text-slate-700">
-            MSc Artificial Intelligence • Open University of Kenya (OUK)
+            {t.appTitle} — Community Narrative Monitor
           </p>
           <p>
             Field Partner Validation: Tareto Africa Trust • Guided by Ubuntu Data Ethics & African NLP Principles

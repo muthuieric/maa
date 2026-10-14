@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Wifi, WifiOff, RefreshCw } from 'lucide-react';
 import { getOfflineNarratives, syncOfflineQueue } from '../lib/offlineStorage';
 import { LanguageCode, translations } from '../lib/translations';
@@ -14,25 +14,40 @@ export const SyncStatusBadge: React.FC<Props> = ({ currentLang, onSyncComplete }
   const [isOnline, setIsOnline] = useState<boolean>(true);
   const [queueCount, setQueueCount] = useState<number>(0);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
+  // Ref guards against concurrent syncs without hitting stale-closure traps.
+  const syncingRef = useRef<boolean>(false);
+  // Keep the latest callback reachable from long-lived listeners/interval.
+  const onSyncCompleteRef = useRef(onSyncComplete);
+  onSyncCompleteRef.current = onSyncComplete;
   const t = translations[currentLang];
 
-  const checkQueue = async () => {
+  const checkQueue = async (): Promise<number> => {
     try {
       const items = await getOfflineNarratives();
       setQueueCount(items.length);
+      return items.length;
     } catch {
       setQueueCount(0);
+      return 0;
     }
   };
 
   const handleManualSync = async () => {
-    if (!isOnline || isSyncing) return;
+    // Always evaluate live connectivity instead of possibly-stale state,
+    // otherwise the `online` event handler exits via the guard below.
+    const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
+    setIsOnline(online);
+    if (!online || syncingRef.current) return;
+    syncingRef.current = true;
     setIsSyncing(true);
     try {
       await syncOfflineQueue();
       await checkQueue();
-      if (onSyncComplete) onSyncComplete();
+      if (onSyncCompleteRef.current) onSyncCompleteRef.current();
+    } catch {
+      // Keep items queued; the interval will retry while online.
     } finally {
+      syncingRef.current = false;
       setIsSyncing(false);
     }
   };
@@ -51,15 +66,27 @@ export const SyncStatusBadge: React.FC<Props> = ({ currentLang, onSyncComplete }
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
-    checkQueue();
 
-    const interval = setInterval(checkQueue, 5000);
+    // Flush any cached items immediately when the page loads while online,
+    // otherwise the queue only ever synced after a manual click.
+    handleManualSync();
+
+    const interval = setInterval(async () => {
+      const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
+      setIsOnline(online);
+      const pending = await checkQueue();
+      // Periodically retry while items remain queued and we are online.
+      if (online && pending > 0) {
+        handleManualSync();
+      }
+    }, 5000);
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
       clearInterval(interval);
     };
-  }, [isOnline]);
+  }, []);
 
   return (
     <div className="flex items-center space-x-2 text-xs">

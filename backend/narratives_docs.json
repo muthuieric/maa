@@ -6432,5 +6432,2398 @@
     "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
     "narrative_id": "87df37f5-599e-4751-a329-337d1d6bc0d6",
     "created_at": "2026-10-08T20:48:17.121941+00:00"
+  },
+  {
+    "narrative": "Katika kijiji chetu, ngariba alikuja kufanya mila ya tohara ya wasichana kabla ya sherehe ya ukeketaji.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9832,
+    "confidence_breakdown": {
+      "FGM": 0.9832,
+      "Child marriage": 0.0021,
+      "Other": 0.0105,
+      "None": 0.0042
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 21,
+        "end_pos": 28,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 45,
+        "end_pos": 59,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 53,
+        "end_pos": 72,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "sherehe ya ukeketaji",
+        "matched_text": "sherehe ya ukeketaji",
+        "start_pos": 82,
+        "end_pos": 102,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "FGM ceremony celebration",
+        "weight": 0.92
+      },
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 93,
+        "end_pos": 102,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "527eed62-acf0-48e4-906b-4b882856d039",
+    "created_at": "2026-10-12T16:34:13.139618+00:00"
+  },
+  {
+    "narrative": "Entito ena kake eing'uaa sukulu amu eitasheyie enkaputi o inkishu pee aaku esiankiki.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 25,
+        "end_pos": 31,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 47,
+        "end_pos": 55,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 58,
+        "end_pos": 65,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 75,
+        "end_pos": 84,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "1d9da3c2-3664-4032-9aea-824adfd91c8e",
+    "created_at": "2026-10-12T16:34:13.163303+00:00"
+  },
+  {
+    "narrative": "Tunapinga ukeketaji na tunalinda haki za watoto na haki ya mtoto wa kike kupata elimu badala ya tohara.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.9245,
+      "Child marriage": 0.0094,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 10,
+        "end_pos": 19,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "haki za watoto",
+        "matched_text": "haki za watoto",
+        "start_pos": 33,
+        "end_pos": 47,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Children's rights",
+        "weight": 0.9
+      },
+      {
+        "term": "haki ya mtoto wa kike",
+        "matched_text": "haki ya mtoto wa kike",
+        "start_pos": 51,
+        "end_pos": 72,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Rights of the girl child",
+        "weight": 0.92
+      },
+      {
+        "term": "elimu",
+        "matched_text": "elimu",
+        "start_pos": 80,
+        "end_pos": 85,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Education for girls",
+        "weight": 0.75
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "c55cd6f6-9b02-4361-9607-0ac189029020",
+    "created_at": "2026-10-12T16:34:13.184114+00:00"
+  },
+  {
+    "narrative": "Kuozwa kwa mtoto mdogo na ndoa za mapema zinaharibu maisha yake.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.9577,
+    "confidence_breakdown": {
+      "FGM": 0.0053,
+      "Child marriage": 0.9577,
+      "Other": 0.0265,
+      "None": 0.0106
+    },
+    "detected_markers": [
+      {
+        "term": "kuozwa",
+        "matched_text": "Kuozwa",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "To be given away in marriage",
+        "weight": 0.85
+      },
+      {
+        "term": "ndoa za mapema",
+        "matched_text": "ndoa za mapema",
+        "start_pos": 26,
+        "end_pos": 40,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Early marriage",
+        "weight": 0.96
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "9e3aff72-8698-45f2-a335-3c426ba86b30",
+    "created_at": "2026-10-12T16:34:13.247252+00:00"
+  },
+  {
+    "narrative": "Wasichana walilazimishwa kufanyiwa ukeketaji na ngariba katika kijiji.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9604,
+    "confidence_breakdown": {
+      "FGM": 0.9604,
+      "Child marriage": 0.005,
+      "Other": 0.0248,
+      "None": 0.0099
+    },
+    "detected_markers": [
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 35,
+        "end_pos": 44,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 48,
+        "end_pos": 55,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "506fe138-4fe2-464f-b1e7-8c1179a5b57f",
+    "created_at": "2026-10-12T16:34:13.282490+00:00"
+  },
+  {
+    "narrative": "Entito eitasheyie enkaputi o inkishu pee aaku esiankiki to olosho.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 18,
+        "end_pos": 26,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 29,
+        "end_pos": 36,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 46,
+        "end_pos": 55,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "b3d7f869-343a-4473-b38d-23f8234c4856",
+    "created_at": "2026-10-12T16:34:13.300310+00:00"
+  },
+  {
+    "narrative": "Einguaa sukulu amu eitasheyie enkaputi o inkishu pee aaku esiankiki.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.969,
+    "confidence_breakdown": {
+      "FGM": 0.0039,
+      "Child marriage": 0.969,
+      "Other": 0.0194,
+      "None": 0.0078
+    },
+    "detected_markers": [
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 8,
+        "end_pos": 14,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 30,
+        "end_pos": 38,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 41,
+        "end_pos": 48,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 58,
+        "end_pos": 67,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "64de3bd9-f2a8-409c-9ea8-c60ec3632f48",
+    "created_at": "2026-10-12T16:36:07.571426+00:00"
+  },
+  {
+    "narrative": "Wasichana wengi katika kijiji chetu cha Kajiado East wanalazimishwa kuacha shule na kuolewa mapema baada ya mahali kulipwa.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.9529,
+    "confidence_breakdown": {
+      "FGM": 0.0059,
+      "Child marriage": 0.9529,
+      "Other": 0.0294,
+      "None": 0.0118
+    },
+    "detected_markers": [
+      {
+        "term": "kuolewa mapema",
+        "matched_text": "kuolewa mapema",
+        "start_pos": 84,
+        "end_pos": 98,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Marrying early before adulthood",
+        "weight": 0.92
+      },
+      {
+        "term": "mahali",
+        "matched_text": "mahali",
+        "start_pos": 108,
+        "end_pos": 114,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Bride price / dowry payment",
+        "weight": 0.7
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "fa975750-ce1f-4442-b387-e24a10c29cc5",
+    "created_at": "2026-10-12T16:36:14.524868+00:00"
+  },
+  {
+    "narrative": "Sherehe ya ukeketaji ilifanyika kisiri ili kukwepa sheria na polisi huko Kajiado Central.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9596,
+    "confidence_breakdown": {
+      "FGM": 0.9596,
+      "Child marriage": 0.0051,
+      "Other": 0.0253,
+      "None": 0.0101
+    },
+    "detected_markers": [
+      {
+        "term": "sherehe ya ukeketaji",
+        "matched_text": "Sherehe ya ukeketaji",
+        "start_pos": 0,
+        "end_pos": 20,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "FGM ceremony celebration",
+        "weight": 0.92
+      },
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 11,
+        "end_pos": 20,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "sheria",
+        "matched_text": "sheria",
+        "start_pos": 51,
+        "end_pos": 57,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Law / Prohibition of FGM Act",
+        "weight": 0.8
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "d1d94a07-a831-47aa-9db2-1289c6dd525f",
+    "created_at": "2026-10-12T16:36:14.571056+00:00"
+  },
+  {
+    "narrative": "Enkiguran o ng'ejukisho to mara e Kajiado South etanya enkirotet nemeitieu bae e ilmurat.",
+    "language": "Maa",
+    "label": "None",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "db4110f2-d03d-409c-b601-7bbc73734ae0",
+    "created_at": "2026-10-12T16:36:14.609702+00:00"
+  },
+  {
+    "narrative": "Kimanyat meitasheyie emuratare o esiankiki, kintare sukulu o enkishon e ntoyie to Kajiado Central.",
+    "language": "Maa",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.4822,
+    "confidence_breakdown": {
+      "FGM": 0.4822,
+      "Child marriage": 0.4822,
+      "Other": 0.0254,
+      "None": 0.0102
+    },
+    "detected_markers": [
+      {
+        "term": "meitasheyie",
+        "matched_text": "meitasheyie",
+        "start_pos": 9,
+        "end_pos": 20,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Stop / do not continue the custom",
+        "weight": 0.85
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 21,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 33,
+        "end_pos": 42,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      },
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 52,
+        "end_pos": 58,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkishon",
+        "matched_text": "enkishon",
+        "start_pos": 61,
+        "end_pos": 69,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Life / bodily integrity and health",
+        "weight": 0.6
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "68d2cf0b-f241-40e5-91d1-3d07c6dd41bb",
+    "created_at": "2026-10-12T16:36:14.648325+00:00"
+  },
+  {
+    "narrative": "Olmurani le Kajiado South eitu eisho entito neme murata aaku enkaisho enye, kake erikunoto eitasheyie enkop.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "FGM",
+    "prediction_score": 0.5314,
+    "confidence_breakdown": {
+      "FGM": 0.5314,
+      "Child marriage": 0.4348,
+      "Other": 0.0242,
+      "None": 0.0097
+    },
+    "detected_markers": [
+      {
+        "term": "olmurani",
+        "matched_text": "Olmurani",
+        "start_pos": 0,
+        "end_pos": 8,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Warrior / young man seeking circumcised wife",
+        "weight": 0.6
+      },
+      {
+        "term": "entito",
+        "matched_text": "entito",
+        "start_pos": 37,
+        "end_pos": 43,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 81,
+        "end_pos": 90,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "1ff8ff63-1bc3-4769-8970-9799453d4382",
+    "created_at": "2026-10-12T16:36:14.703952+00:00"
+  },
+  {
+    "narrative": "Olmurani le Trans Mara West eitu eisho entito neme murata aaku enkaisho enye, kake erikunoto eitasheyie enkop.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "FGM",
+    "prediction_score": 0.5314,
+    "confidence_breakdown": {
+      "FGM": 0.5314,
+      "Child marriage": 0.4348,
+      "Other": 0.0242,
+      "None": 0.0097
+    },
+    "detected_markers": [
+      {
+        "term": "olmurani",
+        "matched_text": "Olmurani",
+        "start_pos": 0,
+        "end_pos": 8,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Warrior / young man seeking circumcised wife",
+        "weight": 0.6
+      },
+      {
+        "term": "entito",
+        "matched_text": "entito",
+        "start_pos": 39,
+        "end_pos": 45,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 83,
+        "end_pos": 92,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "d7742df4-004a-44a2-90c1-d0a5c3aff3fe",
+    "created_at": "2026-10-12T16:36:14.730056+00:00"
+  },
+  {
+    "narrative": "Entito ena kake eing'uaa sukulu amu eitasheyie enkaputi o inkishu pee aaku esiankiki to olosho le Trans Mara East.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 25,
+        "end_pos": 31,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 47,
+        "end_pos": 55,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 58,
+        "end_pos": 65,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 75,
+        "end_pos": 84,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "9b42e9ba-e1c8-4133-8991-2cdc6b5d4c4b",
+    "created_at": "2026-10-12T16:36:14.749448+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Kajiado North kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 55,
+        "end_pos": 69,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 63,
+        "end_pos": 82,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "ad3d2e58-df55-43ed-a573-9b2dd13b4f51",
+    "created_at": "2026-10-12T16:36:14.768624+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Narok East kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 52,
+        "end_pos": 66,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 60,
+        "end_pos": 79,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "1a179527-d48b-4f01-b3dc-eb2929490062",
+    "created_at": "2026-10-12T16:36:14.788470+00:00"
+  },
+  {
+    "narrative": "Olmurani le Kajiado Central eitu eisho entito neme murata aaku enkaisho enye, kake erikunoto eitasheyie enkop.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "FGM",
+    "prediction_score": 0.5314,
+    "confidence_breakdown": {
+      "FGM": 0.5314,
+      "Child marriage": 0.4348,
+      "Other": 0.0242,
+      "None": 0.0097
+    },
+    "detected_markers": [
+      {
+        "term": "olmurani",
+        "matched_text": "Olmurani",
+        "start_pos": 0,
+        "end_pos": 8,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Warrior / young man seeking circumcised wife",
+        "weight": 0.6
+      },
+      {
+        "term": "entito",
+        "matched_text": "entito",
+        "start_pos": 39,
+        "end_pos": 45,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 83,
+        "end_pos": 92,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "927df61a-572c-4e35-8686-d4a95c5adc5c",
+    "created_at": "2026-10-12T16:36:14.807986+00:00"
+  },
+  {
+    "narrative": "Emuratare e ntoyie katukul etang'asari to lng'obor le Trans Mara East, ilpayiani eomon pee elo dukuya.",
+    "language": "Maa",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9604,
+    "confidence_breakdown": {
+      "FGM": 0.9604,
+      "Child marriage": 0.005,
+      "Other": 0.0248,
+      "None": 0.0099
+    },
+    "detected_markers": [
+      {
+        "term": "emuratare",
+        "matched_text": "Emuratare",
+        "start_pos": 0,
+        "end_pos": 9,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      },
+      {
+        "term": "emuratare e ntoyie",
+        "matched_text": "Emuratare e ntoyie",
+        "start_pos": 0,
+        "end_pos": 18,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Female circumcision ceremony",
+        "weight": 0.99
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "bbbba3cc-84ec-4c0c-9607-02d87424247f",
+    "created_at": "2026-10-12T16:36:14.827813+00:00"
+  },
+  {
+    "narrative": "Wakazi wa Kajiado East walikusanyika sokoni kujadili masuala ya kilimo cha mifugo na usambazaji wa maji safi.",
+    "language": "Swahili",
+    "label": "None",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "ddf1c794-3e53-4245-a42e-1071ee812da6",
+    "created_at": "2026-10-12T16:36:14.847432+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Trans Mara East kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 57,
+        "end_pos": 71,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 65,
+        "end_pos": 84,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "f6cfb013-51bf-4639-bae4-c2f33f750e7d",
+    "created_at": "2026-10-12T16:36:14.866817+00:00"
+  },
+  {
+    "narrative": "Olmurani le Kajiado East eitu eisho entito neme murata aaku enkaisho enye, kake erikunoto eitasheyie enkop.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "FGM",
+    "prediction_score": 0.5314,
+    "confidence_breakdown": {
+      "FGM": 0.5314,
+      "Child marriage": 0.4348,
+      "Other": 0.0242,
+      "None": 0.0097
+    },
+    "detected_markers": [
+      {
+        "term": "olmurani",
+        "matched_text": "Olmurani",
+        "start_pos": 0,
+        "end_pos": 8,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Warrior / young man seeking circumcised wife",
+        "weight": 0.6
+      },
+      {
+        "term": "entito",
+        "matched_text": "entito",
+        "start_pos": 36,
+        "end_pos": 42,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 80,
+        "end_pos": 89,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "5b6f0a5f-fb10-48c2-882a-c28d54e21f5d",
+    "created_at": "2026-10-12T16:36:14.885864+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Narok South kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 53,
+        "end_pos": 67,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 61,
+        "end_pos": 80,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "441c3f69-f7e8-4982-97f3-f688d5a6c0bd",
+    "created_at": "2026-10-12T16:36:14.904476+00:00"
+  },
+  {
+    "narrative": "Kimanyat meitasheyie emuratare o esiankiki, kintare sukulu o enkishon e ntoyie to Kajiado East.",
+    "language": "Maa",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.4822,
+    "confidence_breakdown": {
+      "FGM": 0.4822,
+      "Child marriage": 0.4822,
+      "Other": 0.0254,
+      "None": 0.0102
+    },
+    "detected_markers": [
+      {
+        "term": "meitasheyie",
+        "matched_text": "meitasheyie",
+        "start_pos": 9,
+        "end_pos": 20,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Stop / do not continue the custom",
+        "weight": 0.85
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 21,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 33,
+        "end_pos": 42,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      },
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 52,
+        "end_pos": 58,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkishon",
+        "matched_text": "enkishon",
+        "start_pos": 61,
+        "end_pos": 69,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Life / bodily integrity and health",
+        "weight": 0.6
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "febbb303-99e8-4986-ac51-323ca458f63e",
+    "created_at": "2026-10-12T16:36:14.924697+00:00"
+  },
+  {
+    "narrative": "Enkiguran o ng'ejukisho to mara e Narok South etanya enkirotet nemeitieu bae e ilmurat.",
+    "language": "Maa",
+    "label": "None",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "35e36041-12d0-47f2-b288-d546135220ba",
+    "created_at": "2026-10-12T16:36:14.943529+00:00"
+  },
+  {
+    "narrative": "Mila ya ndoa za utotoni inakatisha ndoto za mabinti huko Kajiado West, lazima tuokoe mtoto wa kike na kumpeleka shule.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.0094,
+      "Child marriage": 0.9245,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ndoa za utotoni",
+        "matched_text": "ndoa za utotoni",
+        "start_pos": 8,
+        "end_pos": 23,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Child marriage",
+        "weight": 0.98
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "c7b1cd71-c118-4e67-b29e-4dd922d49399",
+    "created_at": "2026-10-12T16:36:14.962307+00:00"
+  },
+  {
+    "narrative": "Emuratare e ntoyie katukul etang'asari to lng'obor le Kajiado West, ilpayiani eomon pee elo dukuya.",
+    "language": "Maa",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9604,
+    "confidence_breakdown": {
+      "FGM": 0.9604,
+      "Child marriage": 0.005,
+      "Other": 0.0248,
+      "None": 0.0099
+    },
+    "detected_markers": [
+      {
+        "term": "emuratare",
+        "matched_text": "Emuratare",
+        "start_pos": 0,
+        "end_pos": 9,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      },
+      {
+        "term": "emuratare e ntoyie",
+        "matched_text": "Emuratare e ntoyie",
+        "start_pos": 0,
+        "end_pos": 18,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Female circumcision ceremony",
+        "weight": 0.99
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "9c94a43e-8021-4cb5-a1b5-7edb5b2ef5d8",
+    "created_at": "2026-10-12T16:36:14.981867+00:00"
+  },
+  {
+    "narrative": "Wazazi walikubaliana kuozwa kwa mtoto mdogo ili kupata ng'ombe wa mahali kutokana na ukame katika eneo la Trans Mara East.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.9509,
+    "confidence_breakdown": {
+      "FGM": 0.0061,
+      "Child marriage": 0.9509,
+      "Other": 0.0307,
+      "None": 0.0123
+    },
+    "detected_markers": [
+      {
+        "term": "kuozwa",
+        "matched_text": "kuozwa",
+        "start_pos": 21,
+        "end_pos": 27,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "To be given away in marriage",
+        "weight": 0.85
+      },
+      {
+        "term": "mahali",
+        "matched_text": "mahali",
+        "start_pos": 66,
+        "end_pos": 72,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Bride price / dowry payment",
+        "weight": 0.7
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "0c29469f-aba2-408f-9782-4992d449169c",
+    "created_at": "2026-10-12T16:36:15.003548+00:00"
+  },
+  {
+    "narrative": "Kimanyat meitasheyie emuratare o esiankiki, kintare sukulu o enkishon e ntoyie to Narok North.",
+    "language": "Maa",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.4822,
+    "confidence_breakdown": {
+      "FGM": 0.4822,
+      "Child marriage": 0.4822,
+      "Other": 0.0254,
+      "None": 0.0102
+    },
+    "detected_markers": [
+      {
+        "term": "meitasheyie",
+        "matched_text": "meitasheyie",
+        "start_pos": 9,
+        "end_pos": 20,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Stop / do not continue the custom",
+        "weight": 0.85
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 21,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 33,
+        "end_pos": 42,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      },
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 52,
+        "end_pos": 58,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "enkishon",
+        "matched_text": "enkishon",
+        "start_pos": 61,
+        "end_pos": 69,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "Life / bodily integrity and health",
+        "weight": 0.6
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "b21cb96f-30ac-4ad9-8817-20f94ebb9eff",
+    "created_at": "2026-10-12T16:36:15.026084+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Narok South kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 53,
+        "end_pos": 67,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 61,
+        "end_pos": 80,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "91c82890-676c-44f2-b02f-f5a62def6314",
+    "created_at": "2026-10-12T16:36:15.050228+00:00"
+  },
+  {
+    "narrative": "Sherehe ya ukeketaji ilifanyika kisiri ili kukwepa sheria na polisi huko Kajiado Central.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9596,
+    "confidence_breakdown": {
+      "FGM": 0.9596,
+      "Child marriage": 0.0051,
+      "Other": 0.0253,
+      "None": 0.0101
+    },
+    "detected_markers": [
+      {
+        "term": "sherehe ya ukeketaji",
+        "matched_text": "Sherehe ya ukeketaji",
+        "start_pos": 0,
+        "end_pos": 20,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "FGM ceremony celebration",
+        "weight": 0.92
+      },
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 11,
+        "end_pos": 20,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "sheria",
+        "matched_text": "sheria",
+        "start_pos": 51,
+        "end_pos": 57,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Law / Prohibition of FGM Act",
+        "weight": 0.8
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "09b7c16b-7ed6-4084-b37f-de8b264df653",
+    "created_at": "2026-10-12T16:36:15.073413+00:00"
+  },
+  {
+    "narrative": "Ngariba maarufu alikuja usiku Narok West kutekeleza mila ya tohara ya wasichana kabla ya msimu wa shule kuanza.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9721,
+    "confidence_breakdown": {
+      "FGM": 0.9721,
+      "Child marriage": 0.0035,
+      "Other": 0.0174,
+      "None": 0.007
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "Ngariba",
+        "start_pos": 0,
+        "end_pos": 7,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 52,
+        "end_pos": 66,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 60,
+        "end_pos": 79,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "f3f7ba01-83cf-4f75-b881-34994ae5530c",
+    "created_at": "2026-10-12T16:36:15.096677+00:00"
+  },
+  {
+    "narrative": "Mila ya ndoa za utotoni inakatisha ndoto za mabinti huko Kajiado North, lazima tuokoe mtoto wa kike na kumpeleka shule.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.0094,
+      "Child marriage": 0.9245,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ndoa za utotoni",
+        "matched_text": "ndoa za utotoni",
+        "start_pos": 8,
+        "end_pos": 23,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Child marriage",
+        "weight": 0.98
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "ba3dee79-a23f-41aa-901a-48d1fad2ee71",
+    "created_at": "2026-10-12T16:36:15.119722+00:00"
+  },
+  {
+    "narrative": "Wasichana katika jamii yetu wanakabiliwa na mila ya tohara ya wasichana na ngariba anaitwa kuwakata kabla ya ndoa za mapema.",
+    "language": "Swahili",
+    "label": "Child marriage",
+    "prediction_label": "FGM",
+    "prediction_score": 0.7304,
+    "confidence_breakdown": {
+      "FGM": 0.7304,
+      "Child marriage": 0.2513,
+      "Other": 0.0131,
+      "None": 0.0052
+    },
+    "detected_markers": [
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 44,
+        "end_pos": 58,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 52,
+        "end_pos": 71,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 75,
+        "end_pos": 82,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "ndoa za mapema",
+        "matched_text": "ndoa za mapema",
+        "start_pos": 109,
+        "end_pos": 123,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Early marriage",
+        "weight": 0.96
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "da8eb337-2b09-4780-8b50-557d75d0c579",
+    "created_at": "2026-10-12T16:44:36.988725+00:00"
+  },
+  {
+    "narrative": "Blasio ni ngoti",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "fa3a93e5-fe89-46e9-bf27-2c26b95e3333",
+    "created_at": "2026-10-12T16:50:21.806945+00:00"
+  },
+  {
+    "narrative": "ni lazima utaoa wewe msichana\n",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "d9f0baaf-16fe-48a2-8ab3-c86ac22ca519",
+    "created_at": "2026-10-12T16:54:16.051599+00:00"
+  },
+  {
+    "narrative": "Wasichana katika jamii yetu wanakabiliwa na mila ya tohara ya wasichana na ngariba anaitwa kuwakata kabla ya ndoa za mapema.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.7304,
+    "confidence_breakdown": {
+      "FGM": 0.7304,
+      "Child marriage": 0.2513,
+      "Other": 0.0131,
+      "None": 0.0052
+    },
+    "detected_markers": [
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 44,
+        "end_pos": 58,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 52,
+        "end_pos": 71,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 75,
+        "end_pos": 82,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "ndoa za mapema",
+        "matched_text": "ndoa za mapema",
+        "start_pos": 109,
+        "end_pos": 123,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Early marriage",
+        "weight": 0.96
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "274d56d6-3144-4b8c-9895-559b5ab51916",
+    "created_at": "2026-10-14T09:53:31.286284+00:00"
+  },
+  {
+    "narrative": "Wasichana walilazimishwa na ngariba kufanyiwa mila ya tohara ya wasichana kabla ya kuvuka ungo.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9782,
+    "confidence_breakdown": {
+      "FGM": 0.9782,
+      "Child marriage": 0.0027,
+      "Other": 0.0136,
+      "None": 0.0054
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 28,
+        "end_pos": 35,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 46,
+        "end_pos": 60,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 54,
+        "end_pos": 73,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "kuvuka ungo",
+        "matched_text": "kuvuka ungo",
+        "start_pos": 83,
+        "end_pos": 94,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Transition to womanhood through cut",
+        "weight": 0.8
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "7e614e27-7671-4984-824d-9906469d4bc9",
+    "created_at": "2026-10-14T10:24:48.073491+00:00"
+  },
+  {
+    "narrative": "Entito ena eitasheyie enkaputi o inkishu pee aaku esiankiki to olosho e Kajiado.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 22,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 33,
+        "end_pos": 40,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 50,
+        "end_pos": 59,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "9334b3a7-3706-4a04-a51b-a3ea85f8ade7",
+    "created_at": "2026-10-14T10:24:50.115185+00:00"
+  },
+  {
+    "narrative": "Tunapinga ukeketaji na tunalinda haki za watoto na elimu badala ya tohara.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.9245,
+      "Child marriage": 0.0094,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 10,
+        "end_pos": 19,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "haki za watoto",
+        "matched_text": "haki za watoto",
+        "start_pos": 33,
+        "end_pos": 47,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Children's rights",
+        "weight": 0.9
+      },
+      {
+        "term": "elimu",
+        "matched_text": "elimu",
+        "start_pos": 51,
+        "end_pos": 56,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Education for girls",
+        "weight": 0.75
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "9658ba6d-2288-465c-8453-dd7a6b8b08a0",
+    "created_at": "2026-10-14T10:24:52.159927+00:00"
+  },
+  {
+    "narrative": "Eing'uaa sukulu amu eitasheyie esitaany o erikunoto to emuratare.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.6357,
+    "confidence_breakdown": {
+      "FGM": 0.3393,
+      "Child marriage": 0.6357,
+      "Other": 0.0179,
+      "None": 0.0071
+    },
+    "detected_markers": [
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 9,
+        "end_pos": 15,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "esitaany",
+        "matched_text": "esitaany",
+        "start_pos": 31,
+        "end_pos": 39,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Early betrothal negotiations for young girls",
+        "weight": 0.88
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 42,
+        "end_pos": 51,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 55,
+        "end_pos": 64,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "7d988413-1491-4bc9-be67-6543666a3517",
+    "created_at": "2026-10-14T10:24:54.206151+00:00"
+  },
+  {
+    "narrative": "Wasichana walilazimishwa na ngariba kufanyiwa mila ya tohara ya wasichana kabla ya kuvuka ungo.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9782,
+    "confidence_breakdown": {
+      "FGM": 0.9782,
+      "Child marriage": 0.0027,
+      "Other": 0.0136,
+      "None": 0.0054
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 28,
+        "end_pos": 35,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 46,
+        "end_pos": 60,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 54,
+        "end_pos": 73,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "kuvuka ungo",
+        "matched_text": "kuvuka ungo",
+        "start_pos": 83,
+        "end_pos": 94,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Transition to womanhood through cut",
+        "weight": 0.8
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "43faa8ad-3efb-4794-aa88-55ad7466d7b2",
+    "created_at": "2026-10-14T10:25:05.892097+00:00"
+  },
+  {
+    "narrative": "Entito ena eitasheyie enkaputi o inkishu pee aaku esiankiki to olosho e Kajiado.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 22,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 33,
+        "end_pos": 40,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 50,
+        "end_pos": 59,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "16b2a7f4-a8c0-4546-ad06-7f529cd1ffb2",
+    "created_at": "2026-10-14T10:25:07.964406+00:00"
+  },
+  {
+    "narrative": "Tunapinga ukeketaji na tunalinda haki za watoto na elimu badala ya tohara.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.9245,
+      "Child marriage": 0.0094,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 10,
+        "end_pos": 19,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "haki za watoto",
+        "matched_text": "haki za watoto",
+        "start_pos": 33,
+        "end_pos": 47,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Children's rights",
+        "weight": 0.9
+      },
+      {
+        "term": "elimu",
+        "matched_text": "elimu",
+        "start_pos": 51,
+        "end_pos": 56,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Education for girls",
+        "weight": 0.75
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "3caec01b-48ca-4e9d-964a-2ea59eca42af",
+    "created_at": "2026-10-14T10:25:10.019766+00:00"
+  },
+  {
+    "narrative": "Eing'uaa sukulu amu eitasheyie esitaany o erikunoto to emuratare.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.6357,
+    "confidence_breakdown": {
+      "FGM": 0.3393,
+      "Child marriage": 0.6357,
+      "Other": 0.0179,
+      "None": 0.0071
+    },
+    "detected_markers": [
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 9,
+        "end_pos": 15,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "esitaany",
+        "matched_text": "esitaany",
+        "start_pos": 31,
+        "end_pos": 39,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Early betrothal negotiations for young girls",
+        "weight": 0.88
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 42,
+        "end_pos": 51,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 55,
+        "end_pos": 64,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "01c468a2-77bc-4581-b0d5-ba7934de5ea4",
+    "created_at": "2026-10-14T10:25:12.065651+00:00"
+  },
+  {
+    "narrative": "Wasichana walilazimishwa na ngariba kufanyiwa mila ya tohara ya wasichana kabla ya kuvuka ungo.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9782,
+    "confidence_breakdown": {
+      "FGM": 0.9782,
+      "Child marriage": 0.0027,
+      "Other": 0.0136,
+      "None": 0.0054
+    },
+    "detected_markers": [
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 28,
+        "end_pos": 35,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 46,
+        "end_pos": 60,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 54,
+        "end_pos": 73,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "kuvuka ungo",
+        "matched_text": "kuvuka ungo",
+        "start_pos": 83,
+        "end_pos": 94,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Transition to womanhood through cut",
+        "weight": 0.8
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado.",
+    "narrative_id": "2082ebbb-b265-4d12-8c8d-363bd568fb3a",
+    "created_at": "2026-10-14T10:25:33.513271+00:00"
+  },
+  {
+    "narrative": "Entito ena eitasheyie enkaputi o inkishu pee aaku esiankiki to olosho e Kajiado.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.8143,
+    "confidence_breakdown": {
+      "FGM": 0.1629,
+      "Child marriage": 0.8143,
+      "Other": 0.0163,
+      "None": 0.0065
+    },
+    "detected_markers": [
+      {
+        "term": "entito",
+        "matched_text": "Entito",
+        "start_pos": 0,
+        "end_pos": 6,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Uninitiated young girl",
+        "weight": 0.5
+      },
+      {
+        "term": "enkaputi",
+        "matched_text": "enkaputi",
+        "start_pos": 22,
+        "end_pos": 30,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "In-law alliance / arranged bride price payment",
+        "weight": 0.85
+      },
+      {
+        "term": "inkishu",
+        "matched_text": "inkishu",
+        "start_pos": 33,
+        "end_pos": 40,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Cattle dowry / bride wealth for marriage",
+        "weight": 0.7
+      },
+      {
+        "term": "esiankiki",
+        "matched_text": "esiankiki",
+        "start_pos": 50,
+        "end_pos": 59,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Young bride / betrothed girl",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "4f0bf524-9e56-400a-b677-11b82b770049",
+    "created_at": "2026-10-14T10:25:35.557446+00:00"
+  },
+  {
+    "narrative": "Tunapinga ukeketaji na tunalinda haki za watoto na elimu badala ya tohara.",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "FGM",
+    "prediction_score": 0.9245,
+    "confidence_breakdown": {
+      "FGM": 0.9245,
+      "Child marriage": 0.0094,
+      "Other": 0.0472,
+      "None": 0.0189
+    },
+    "detected_markers": [
+      {
+        "term": "ukeketaji",
+        "matched_text": "ukeketaji",
+        "start_pos": 10,
+        "end_pos": 19,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female genital mutilation",
+        "weight": 0.98
+      },
+      {
+        "term": "haki za watoto",
+        "matched_text": "haki za watoto",
+        "start_pos": 33,
+        "end_pos": 47,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Children's rights",
+        "weight": 0.9
+      },
+      {
+        "term": "elimu",
+        "matched_text": "elimu",
+        "start_pos": 51,
+        "end_pos": 56,
+        "language": "Swahili",
+        "category": "Advocacy/Resistance",
+        "meaning": "Education for girls",
+        "weight": 0.75
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "0977b464-761e-4a25-890a-9aaf61073b5c",
+    "created_at": "2026-10-14T10:25:37.595980+00:00"
+  },
+  {
+    "narrative": "Eing'uaa sukulu amu eitasheyie esitaany o erikunoto to emuratare.",
+    "language": "Maa",
+    "label": "Child marriage",
+    "prediction_label": "Child marriage",
+    "prediction_score": 0.6357,
+    "confidence_breakdown": {
+      "FGM": 0.3393,
+      "Child marriage": 0.6357,
+      "Other": 0.0179,
+      "None": 0.0071
+    },
+    "detected_markers": [
+      {
+        "term": "sukulu",
+        "matched_text": "sukulu",
+        "start_pos": 9,
+        "end_pos": 15,
+        "language": "Maa",
+        "category": "Advocacy/Resistance",
+        "meaning": "School / formal education over early rite",
+        "weight": 0.8
+      },
+      {
+        "term": "esitaany",
+        "matched_text": "esitaany",
+        "start_pos": 31,
+        "end_pos": 39,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Early betrothal negotiations for young girls",
+        "weight": 0.88
+      },
+      {
+        "term": "erikunoto",
+        "matched_text": "erikunoto",
+        "start_pos": 42,
+        "end_pos": 51,
+        "language": "Maa",
+        "category": "Child marriage",
+        "meaning": "Betrothal / taking away the young bride",
+        "weight": 0.9
+      },
+      {
+        "term": "emuratare",
+        "matched_text": "emuratare",
+        "start_pos": 55,
+        "end_pos": 64,
+        "language": "Maa",
+        "category": "FGM",
+        "meaning": "Circumcision / cut rite of passage",
+        "weight": 0.95
+      }
+    ],
+    "discourse_stance": "Challenging / Resisting Practice",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers. Community counter-narrative detected advocating for girl-child education or statutory compliance.",
+    "narrative_id": "bfd8f019-57e8-4ab6-926d-91ebed57a330",
+    "created_at": "2026-10-14T10:25:39.651749+00:00"
+  },
+  {
+    "narrative": "test narrative sync check",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "ae6a933e-46f3-43a8-b4fa-bf595f86a9bf",
+    "created_at": "2026-10-14T19:44:56.548763+00:00"
+  },
+  {
+    "narrative": "test narrative sync check",
+    "language": "Swahili",
+    "label": "FGM",
+    "prediction_label": "None",
+    "prediction_score": 0.8247,
+    "confidence_breakdown": {
+      "FGM": 0.0103,
+      "Child marriage": 0.0103,
+      "Other": 0.1546,
+      "None": 0.8247
+    },
+    "detected_markers": [],
+    "discourse_stance": "Neutral / Descriptive",
+    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
+    "narrative_id": "7503a37e-1f12-4ef0-939c-bac98f1fa428",
+    "created_at": "2026-10-14T19:45:23.548569+00:00"
   }
 ]

@@ -4,8 +4,7 @@
 set -e
 
 echo "================================================================="
-echo "Harmful Practice NLP Detection System (Narok & Kajiado Counties)"
-echo "Open University of Kenya (OUK) • MSc Artificial Intelligence"
+echo "NenoGuard — Community Narrative Monitor (Narok & Kajiado Counties)"
 echo "================================================================="
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

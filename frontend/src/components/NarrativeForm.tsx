@@ -149,7 +149,6 @@ export const NarrativeForm: React.FC<Props> = ({ currentLang, onSubmissionSucces
             onClick={() => setIsConsentModalOpen(true)}
             className="flex items-center space-x-1.5 text-xs text-savanna-800 hover:text-savanna-900 font-semibold bg-savanna-50 border border-savanna-200 px-3 py-1.5 rounded-lg transition-colors"
           >
-            <Shield className="w-3.5 h-3.5 text-savanna-800" />
             <span>Ethical Safeguards</span>
           </button>
         </div>

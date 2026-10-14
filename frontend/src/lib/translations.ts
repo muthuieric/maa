@@ -57,8 +57,8 @@ export interface Translations {
 
 export const translations: Record<LanguageCode, Translations> = {
   en: {
-    appTitle: "Harmful Practice Discourse Detection Tool",
-    subtitle: "Natural Language Processing for Rural Narok & Kajiado Counties • Open University of Kenya",
+    appTitle: "NenoGuard",
+    subtitle: "Community Narrative Monitor • Narok & Kajiado Counties",
     navEntry: "Data Entry",
     navMap: "Spatial GIS Risk Map",
     navAnalytics: "Discourse Analytics",
@@ -94,7 +94,7 @@ export const translations: Record<LanguageCode, Translations> = {
     markersDetected: "Detected Cultural & Dialect Markers",
     culturalNotes: "Qualitative Cultural Context Notes",
     exportTitle: "Research Data Export & Validation",
-    exportDesc: "Download structured and unstructured research data for external validation with community-based organisation records (Objective 2).",
+    exportDesc: "Download structured and unstructured research data for external validation with community-based organisation records.",
     downloadCsv: "Export CSV (Relational Dataset)",
     downloadJson: "Export JSON (Full Documents & Embeddings)",
     recordAudio: "Record Oral Narrative (Audio)",
@@ -106,13 +106,13 @@ export const translations: Record<LanguageCode, Translations> = {
     xaiExplanation: "Color-coded dialect markers extracted by the bilingual tokenizer:",
     cohensKappa: "Cohen's Kappa (Inter-Annotator Agreement)",
     macroF1: "Macro F1-Score",
-    interAnnotatorTitle: "Qualitative Validation & Agreement Metrics (Objective 2)",
+    interAnnotatorTitle: "Qualitative Validation & Agreement Metrics",
     batchUploadTitle: "Batch CBO Dataset Upload & Validation",
     batchUploadDesc: "Upload field narrative batches from Tareto Africa Trust or partner CBOs to evaluate model precision against community ground-truth annotations."
   },
   sw: {
-    appTitle: "Zana ya Utambuzi wa Simulizi za Mila Potofu",
-    subtitle: "Uchakataji Lugha Asilia (NLP) kwa Kaunti za Narok na Kajiado • Chuo Kikuu Huria cha Kenya",
+    appTitle: "NenoGuard",
+    subtitle: "Kifaa cha Ufuatiliaji wa Simulizi za Jamii • Kaunti za Narok na Kajiado",
     navEntry: "Ingizo la Data",
     navMap: "Ramani ya Hatari za Kijiografia",
     navAnalytics: "Uchambuzi wa Simulizi",
@@ -165,8 +165,8 @@ export const translations: Record<LanguageCode, Translations> = {
     batchUploadDesc: "Pakia faili za simulizi kutoka kwa mashirika ya kijamii ili kupima usahihi wa modeli kulingana na lebo za uwandani."
   },
   maa: {
-    appTitle: "Enturoto e Ng'ejukisho e Ntoye O Nkera",
-    subtitle: "NLP to Kaunti e Narok o Kajiado • Open University of Kenya",
+    appTitle: "NenoGuard",
+    subtitle: "Enkiteshero e Ng'ejukisho e Koma • Kaunti e Narok o Kajiado",
     navEntry: "Aiger Ng'ejukisho",
     navMap: "Ramani e Narok & Kajiado",
     navAnalytics: "Ing'orat e Ng'ejukisho",

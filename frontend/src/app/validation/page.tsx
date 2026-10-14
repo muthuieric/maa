@@ -125,7 +125,6 @@ export default function ValidationPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-200">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 flex items-center space-x-2">
-              <CheckCircle2 className="w-6 h-6 text-savanna-800" />
               <span>{t.interAnnotatorTitle}</span>
             </h1>
             <p className="text-xs text-slate-500 mt-1">

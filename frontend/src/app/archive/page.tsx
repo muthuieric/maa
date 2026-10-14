@@ -67,7 +67,6 @@ export default function ArchivePage() {
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-6">
         <div className="pb-4 border-b border-slate-200">
           <h1 className="text-2xl font-bold text-slate-900 flex items-center space-x-2">
-            <Archive className="w-6 h-6 text-savanna-800" />
             <span>{t.navArchive}</span>
           </h1>
           <p className="text-xs text-slate-500 mt-1">
@@ -198,7 +197,6 @@ export default function ArchivePage() {
                       </td>
                       <td className="px-5 py-3.5">
                         <span className="inline-flex items-center space-x-1 text-emerald-700 font-semibold text-[11px]">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                           <span>Audited</span>
                         </span>
                       </td>

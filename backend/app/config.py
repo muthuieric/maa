@@ -2,7 +2,7 @@ import os
 from pydantic import BaseModel
 
 class Settings(BaseModel):
-    PROJECT_NAME: str = "Harmful Practice NLP Detection System"
+    PROJECT_NAME: str = "NenoGuard"
     VERSION: str = "1.0.0"
     API_V1_STR: str = "/api"
     
@@ -10,8 +10,8 @@ class Settings(BaseModel):
     POSTGRES_HOST: str = os.getenv("POSTGRES_HOST", "localhost")
     POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", 5432))
     POSTGRES_DB: str = os.getenv("POSTGRES_DB", "narratives_meta")
-    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "ouk_admin")
-    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "ouk_secure_pass_2026")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "nenoguard_admin")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "nenoguard_secure_pass_2026")
     
     # MongoDB Configuration
     MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://localhost:27017/narratives_db")

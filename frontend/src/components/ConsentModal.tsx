@@ -19,7 +19,6 @@ export const ConsentModal: React.FC<Props> = ({ isOpen, onClose, currentLang }) 
       <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-xl border border-slate-200">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
           <div className="flex items-center space-x-2 text-savanna-800">
-            <ShieldCheck className="w-5 h-5 text-emerald-600" />
             <h3 className="font-semibold text-slate-900 text-base">{t.consentModalTitle}</h3>
           </div>
           <button

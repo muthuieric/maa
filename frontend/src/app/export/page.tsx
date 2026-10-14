@@ -100,7 +100,6 @@ export default function ExportPage() {
         {/* CBO Data Sovereignty Protocol Reminder */}
         <div className="bg-savanna-50 border border-savanna-200 rounded-xl p-6 text-sm text-savanna-900 space-y-2">
           <div className="flex items-center space-x-2 font-bold text-slate-900">
-            <Shield className="w-5 h-5 text-savanna-800" />
             <span>Community Data Sovereignty & Agreement Compliance (Objective 3)</span>
           </div>
           <p className="text-xs text-slate-700 leading-relaxed">

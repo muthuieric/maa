@@ -1,6 +1,6 @@
-# Harmful Practice Narrative Detection Tool (Rural Kenya)
-## MSc Artificial Intelligence — Literature Review & Tool Implementation Plan
-**Author:** Jeffrey Shihembetsa | **Institution:** Open University of Kenya (OUK)
+# NenoGuard — Community Narrative Monitor
+
+## Implementation Plan
 
 ---
 

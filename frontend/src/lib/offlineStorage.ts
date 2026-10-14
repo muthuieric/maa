@@ -11,7 +11,7 @@ export interface QueuedNarrative {
   queued_at: string;
 }
 
-const DB_NAME = 'OukHarmfulPracticeDB';
+const DB_NAME = 'NenoGuardDB';
 const DB_VERSION = 1;
 const STORE_NAME = 'offline_narratives';
 

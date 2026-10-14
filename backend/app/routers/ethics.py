@@ -31,7 +31,7 @@ async def get_consent_audit_ledger():
 
         ledger.append({
             "narrative_id": nid,
-            "pseudonymised_token": f"OUK-NAR-{nid[:8].upper()}",
+            "pseudonymised_token": f"NG-NAR-{nid[:8].upper()}",
             "consent_given": r.get("consent_given", True),
             "consent_timestamp": ts,
             "custodian_cbo": cbo,
@@ -45,7 +45,7 @@ async def get_consent_audit_ledger():
 
     return {
         "total_audited_records": len(ledger),
-        "sovereignty_custodian": "Tareto Africa Trust & Open University of Kenya",
+        "sovereignty_custodian": "Tareto Africa Trust",
         "governance_model": "Ubuntu Communal Consent & Institutional Review Board (IRB)",
         "audit_ledger": ledger
     }
