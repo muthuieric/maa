@@ -100,7 +100,7 @@ export default function ExportPage() {
         {/* CBO Data Sovereignty Protocol Reminder */}
         <div className="bg-savanna-50 border border-savanna-200 rounded-xl p-6 text-sm text-savanna-900 space-y-2">
           <div className="flex items-center space-x-2 font-bold text-slate-900">
-            <span>Community Data Sovereignty & Agreement Compliance (Objective 3)</span>
+            <span>Community Data Sovereignty & Agreement Compliance </span>
           </div>
           <p className="text-xs text-slate-700 leading-relaxed">
             Data exported from this tool is governed under collaborative research agreements with community-based organisations in Narok and Kajiado Counties (such as Tareto Africa Trust). Datasets must only be used for authorised academic validation, human rights advocacy, and policy formulation. Redistribution without consent violates the study’s ethical protocol.

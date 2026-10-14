@@ -14,6 +14,11 @@ export interface Translations {
   navLexicon: string;
   navReport: string;
   navSlides: string;
+  navEntryShort: string;
+  navMapShort: string;
+  navValidationShort: string;
+  navArchiveShort: string;
+  navExportShort: string;
   narrativeLabel: string;
   narrativePlaceholder: string;
   langSelectLabel: string;
@@ -70,6 +75,11 @@ export const translations: Record<LanguageCode, Translations> = {
     navLexicon: "Linguistic Lexicon",
     navReport: "Thesis Dossier",
     navSlides: "Defense Slides",
+    navEntryShort: "Entry",
+    navMapShort: "Map",
+    navValidationShort: "Validate",
+    navArchiveShort: "Archive",
+    navExportShort: "Export",
     narrativeLabel: "Community Narrative Text",
     narrativePlaceholder: "Enter transcribed community narrative in Swahili or Maa...",
     langSelectLabel: "Narrative Language",
@@ -124,6 +134,11 @@ export const translations: Record<LanguageCode, Translations> = {
     navLexicon: "Leksikoni ya Kiisimu",
     navReport: "Ripoti ya Tasnifu",
     navSlides: "Slaidi za Utetezi",
+    navEntryShort: "Ingizo",
+    navMapShort: "Ramani",
+    navValidationShort: "Thibitisha",
+    navArchiveShort: "Kumbukumbu",
+    navExportShort: "Pakua",
     narrativeLabel: "Maandishi ya Simulizi ya Jamii",
     narrativePlaceholder: "Weka simulizi ya jamii kwa Kiswahili au Maa...",
     langSelectLabel: "Lugha ya Simulizi",
@@ -178,6 +193,11 @@ export const translations: Record<LanguageCode, Translations> = {
     navLexicon: "Ilng'ejuk le Kutuk",
     navReport: "Ripoti e Thesis",
     navSlides: "Ilarin le Thesis",
+    navEntryShort: "Aiger",
+    navMapShort: "Ramani",
+    navValidationShort: "Ekiteshero",
+    navArchiveShort: "Enkishomi",
+    navExportShort: "Awol",
     narrativeLabel: "Ng'ejukisho e Maa / Swahili",
     narrativePlaceholder: "Aiger ng'ejukisho e Maa te ena wuejita...",
     langSelectLabel: "Kutuk e Ng'ejukisho",

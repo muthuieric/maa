@@ -78,8 +78,8 @@ export default function MapPage() {
             </p>
           </div>
 
-          <div className="flex items-center space-x-2 bg-white border border-slate-200 p-1 rounded-lg text-xs">
-            <span className="text-slate-400 font-semibold px-2">Metric:</span>
+          <div className="flex flex-wrap items-center gap-1.5 bg-white border border-slate-200 p-1.5 rounded-lg text-xs w-full sm:w-auto">
+            <span className="text-slate-400 font-semibold px-1.5">Metric:</span>
             <button
               onClick={() => setViewMetric('risk')}
               className={`px-2.5 py-1 rounded-md font-semibold transition-all ${
@@ -119,7 +119,7 @@ export default function MapPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Spatial Cards Grid representing Narok & Kajiado Sub-Counties */}
           <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 pb-3 border-b border-slate-100">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center space-x-1.5">
                 <Layers className="w-4 h-4 text-savanna-800" />
                 <span>Sub-County Territorial Units ({mapData.length})</span>

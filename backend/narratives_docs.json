@@ -8018,42 +8018,6 @@
     "created_at": "2026-10-12T16:44:36.988725+00:00"
   },
   {
-    "narrative": "Blasio ni ngoti",
-    "language": "Swahili",
-    "label": "FGM",
-    "prediction_label": "None",
-    "prediction_score": 0.8247,
-    "confidence_breakdown": {
-      "FGM": 0.0103,
-      "Child marriage": 0.0103,
-      "Other": 0.1546,
-      "None": 0.8247
-    },
-    "detected_markers": [],
-    "discourse_stance": "Neutral / Descriptive",
-    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
-    "narrative_id": "fa3a93e5-fe89-46e9-bf27-2c26b95e3333",
-    "created_at": "2026-10-12T16:50:21.806945+00:00"
-  },
-  {
-    "narrative": "ni lazima utaoa wewe msichana\n",
-    "language": "Swahili",
-    "label": "FGM",
-    "prediction_label": "None",
-    "prediction_score": 0.8247,
-    "confidence_breakdown": {
-      "FGM": 0.0103,
-      "Child marriage": 0.0103,
-      "Other": 0.1546,
-      "None": 0.8247
-    },
-    "detected_markers": [],
-    "discourse_stance": "Neutral / Descriptive",
-    "cultural_context_notes": "General narrative without explicit harmful practice markers.",
-    "narrative_id": "d9f0baaf-16fe-48a2-8ab3-c86ac22ca519",
-    "created_at": "2026-10-12T16:54:16.051599+00:00"
-  },
-  {
     "narrative": "Wasichana katika jamii yetu wanakabiliwa na mila ya tohara ya wasichana na ngariba anaitwa kuwakata kabla ya ndoa za mapema.",
     "language": "Swahili",
     "label": "FGM",
@@ -8825,5 +8789,64 @@
     "cultural_context_notes": "General narrative without explicit harmful practice markers.",
     "narrative_id": "7503a37e-1f12-4ef0-939c-bac98f1fa428",
     "created_at": "2026-10-14T19:45:23.548569+00:00"
+  },
+  {
+    "narrative": "Wasichana katika jamii yetu wanakabiliwa na mila ya tohara ya wasichana na ngariba anaitwa kuwakata kabla ya ndoa za mapema.",
+    "language": "Swahili",
+    "label": "Other",
+    "prediction_label": "FGM",
+    "prediction_score": 0.7304,
+    "confidence_breakdown": {
+      "FGM": 0.7304,
+      "Child marriage": 0.2513,
+      "Other": 0.0131,
+      "None": 0.0052
+    },
+    "detected_markers": [
+      {
+        "term": "mila ya tohara",
+        "matched_text": "mila ya tohara",
+        "start_pos": 44,
+        "end_pos": 58,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Circumcision custom",
+        "weight": 0.88
+      },
+      {
+        "term": "tohara ya wasichana",
+        "matched_text": "tohara ya wasichana",
+        "start_pos": 52,
+        "end_pos": 71,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Female circumcision",
+        "weight": 0.95
+      },
+      {
+        "term": "ngariba",
+        "matched_text": "ngariba",
+        "start_pos": 75,
+        "end_pos": 82,
+        "language": "Swahili",
+        "category": "FGM",
+        "meaning": "Traditional cutter / circumciser",
+        "weight": 0.96
+      },
+      {
+        "term": "ndoa za mapema",
+        "matched_text": "ndoa za mapema",
+        "start_pos": 109,
+        "end_pos": 123,
+        "language": "Swahili",
+        "category": "Child marriage",
+        "meaning": "Early marriage",
+        "weight": 0.96
+      }
+    ],
+    "discourse_stance": "Perpetuating / Cultural Affirmation",
+    "cultural_context_notes": "Identified discourse patterns associated with female circumcision rites in Narok/Kajiado. Identified early betrothal / dowry exchange linguistic markers.",
+    "narrative_id": "8b5848e2-4790-4a4f-9b8d-6b8b05e32866",
+    "created_at": "2026-10-14T20:43:38.181369+00:00"
   }
 ]

@@ -11,5 +11,9 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  /* Prevent any stray wide element from shifting the page sideways on mobile.
+     `clip` (not `hidden`) so it does NOT create a scroll container, which would
+     break the sticky navbar. */
+  overflow-x: clip;
 }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
@@ -19,116 +19,106 @@ export const Navbar: React.FC<Props> = ({ currentLang, onLanguageChange, onSyncC
   const t = translations[currentLang];
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Close the mobile drawer whenever the route changes.
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
+  // One consistent label set used for BOTH desktop and mobile views.
   const navLinks = [
-    { href: '/', label: t.navEntry }, 
-    { href: '/map', label: t.navMap },
-    { href: '/validation', label: t.navValidation },
-    { href: '/archive', label: t.navArchive },
-    { href: '/export', label: t.navExport },
+    { href: '/', label: t.navEntryShort },
+    { href: '/map', label: t.navMapShort },
+    { href: '/validation', label: t.navValidationShort },
+    { href: '/archive', label: t.navArchiveShort },
+    { href: '/export', label: t.navExportShort },
   ];
 
+  const linkClasses = (isActive: boolean, isMobile = false) =>
+    `${isMobile ? 'w-full px-4 py-3 text-base' : 'px-3 py-2 text-sm'} block rounded-lg font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 ${
+      isActive
+        ? 'bg-savanna-50 text-savanna-900'
+        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+    }`;
+
   return (
-    <>
-      {/* Spacer updated to perfectly match the combined height of main + mini navbars */}
-      <div className="h-24 w-full" />
-      
-      <header className="fixed top-0 left-0 right-0 w-full z-50 flex flex-col shadow-sm">
-        
-        {/* Main Navbar */}
-        <div className="bg-white/95 backdrop-blur border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16 w-full">
-              
-              {/* 1. Logo & Brand (Left Aligned - flex-1 bumper) */}
-              <div className="flex flex-1 items-center gap-3 min-w-0">
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-savanna-800 flex items-center justify-center text-white font-bold text-sm shadow-md">
-                  NG
-                </div>
-                <div className="hidden sm:block truncate">
-                  <Link href="/" className="block font-bold text-slate-900 text-lg leading-tight hover:text-savanna-800 transition-colors">
-                    {t.appTitle}
-                  </Link>
-                </div>
-              </div>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 gap-3">
 
-              {/* 2. Desktop Navigation (Centered - protected from squishing) */}
-              <nav className="hidden md:flex flex-none items-center justify-center gap-4 lg:gap-8 px-4">
-                {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`text-sm font-medium transition-colors whitespace-nowrap ${
-                        isActive
-                          ? 'text-savanna-900 border-b-2 border-savanna-800 pb-1'
-                          : 'text-slate-500 hover:text-slate-900 pb-1'
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </nav>
+          {/* Brand / Home */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 min-w-0 shrink-0 group"
+            aria-label={`${t.appTitle} — ${t.navEntry}`}
+          >
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-savanna-800 group-hover:bg-savanna-900 flex items-center justify-center text-white font-bold text-sm shadow-md transition-colors">
+              NG
+            </div>
+            <div className="hidden sm:block min-w-0">
+              <span className="block font-bold text-slate-900 text-lg leading-tight group-hover:text-savanna-800 transition-colors">
+                {t.appTitle}
+              </span>
+              <span className="block text-xs text-slate-500 leading-tight truncate max-w-[14rem]">
+                {t.subtitle}
+              </span>
+            </div>
+          </Link>
 
-              {/* 3. Desktop Utilities (Right Aligned - Language Switcher Only) */}
-              <div className="hidden md:flex flex-1 items-center justify-end shrink-0">
-                <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
-              </div>
-
-              {/* Mobile Utilities & Hamburger */}
-              <div className="flex md:hidden flex-1 items-center justify-end gap-3 shrink-0">
-                <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
-                <button
-                  type="button"
-                  onClick={() => setMobileOpen((open) => !open)}
-                  aria-label="Toggle navigation menu"
-                  className="p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+          {/* Desktop navigation — text-only links, consistent labels */}
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={linkClasses(isActive)}
                 >
-                  {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
-              </div>
-            </div>
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Utilities: sync status + language + mobile menu toggle */}
+          <div className="flex items-center gap-2 shrink-0">
+            <SyncStatusBadge currentLang={currentLang} onSyncComplete={onSyncComplete} />
+            <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
+            <button
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav-menu"
+              className="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 transition-colors"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+      </div>
 
-        {/* Mini-Navbar / Status Bar (Discreet strip for the Sync Status) */}
-        <div className="bg-slate-50/95 backdrop-blur border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-end h-8">
-              <SyncStatusBadge currentLang={currentLang} onSyncComplete={onSyncComplete} />
-            </div>
-          </div>
+      {/* Mobile navigation drawer — same labels as desktop */}
+      {mobileOpen && (
+        <div id="mobile-nav-menu" className="md:hidden border-t border-slate-100 bg-white">
+          <nav className="px-4 py-3 space-y-1 max-h-[70vh] overflow-y-auto" aria-label="Mobile navigation">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={linkClasses(isActive, true)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
         </div>
-
-        {/* Mobile Navigation Drawer */}
-        {mobileOpen && (
-          <div className="md:hidden border-t border-slate-200 bg-white">
-            <nav className="flex flex-col px-4 py-4 space-y-2">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      isActive
-                        ? 'bg-savanna-50 text-savanna-900'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-        )}
-      </header>
-    </>
+      )}
+    </header>
   );
 };

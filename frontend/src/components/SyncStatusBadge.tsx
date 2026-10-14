@@ -89,25 +89,22 @@ export const SyncStatusBadge: React.FC<Props> = ({ currentLang, onSyncComplete }
   }, []);
 
   return (
-    <div className="flex items-center space-x-2 text-xs">
+    <div className="flex items-center gap-1.5 text-xs">
       <div
-        className={`flex items-center space-x-1.5 px-2.5 py-1 rounded-full font-medium border ${
+        className={`flex items-center gap-1.5 px-2 py-1 rounded-full font-medium border ${
           isOnline
             ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
             : 'bg-amber-50 text-amber-800 border-amber-200'
         }`}
+        title={isOnline ? t.statusOnline : t.statusOffline}
       >
         {isOnline ? (
-          <>
-            <Wifi className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{t.statusOnline}</span>
-          </>
+          <Wifi className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
         ) : (
-          <>
-            <WifiOff className="w-3.5 h-3.5 text-amber-600" />
-            <span>{t.statusOffline}</span>
-          </>
+          <WifiOff className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />
         )}
+        <span className="sr-only">{isOnline ? t.statusOnline : t.statusOffline}</span>
+        <span className="hidden lg:inline" aria-hidden="true">{isOnline ? t.statusOnline : t.statusOffline}</span>
       </div>
 
       {queueCount > 0 && (
@@ -115,11 +112,12 @@ export const SyncStatusBadge: React.FC<Props> = ({ currentLang, onSyncComplete }
           type="button"
           onClick={handleManualSync}
           disabled={!isOnline || isSyncing}
-          className="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-earth-50 text-earth-800 border border-earth-200 hover:bg-earth-100 transition-colors"
-          title={`${queueCount} items in offline queue. Click to synchronize.`}
+          className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-earth-50 text-earth-800 border border-earth-200 hover:bg-earth-100 disabled:opacity-60 transition-colors font-medium"
+          title={`${queueCount} ${t.queueCount} — click to synchronize`}
         >
-          <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin' : ''}`} />
-          <span>{queueCount} {t.queueCount}</span>
+          <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin' : ''}`} aria-hidden="true" />
+          <span>{queueCount}</span>
+          <span className="hidden lg:inline">{t.queueCount}</span>
         </button>
       )}
     </div>
