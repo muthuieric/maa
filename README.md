@@ -123,6 +123,29 @@ Submissions lacking explicit informed consent are rejected with HTTP 400:
 
 ## 5. Getting Started
 
+### Configuration (required — secrets are never committed)
+
+Database credentials are **not** stored in the repo. Create a local `.env` from the
+template and generate a strong password:
+
+```bash
+cp .env.example .env
+# then edit .env, or generate the password:
+python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+```
+
+`.env` is gitignored. Compose refuses to start if `POSTGRES_PASSWORD` is unset.
+
+> **If a credential was previously committed, rotate it.** Rewriting history with
+> `git filter-repo` and force-pushing is required, because the old value remains
+> readable in every clone and fork:
+
+```bash
+pip install git-filter-repo
+git filter-repo --replace-text <(printf 'nenoguard_secure_pass_2026==>REDACTED\n')
+git push --force --all origin
+```
+
 ### Option A: Docker Compose (recommended)
 
 Starts PostgreSQL, MongoDB, the FastAPI backend, and the Next.js frontend in one command:
@@ -143,7 +166,8 @@ Or start them manually in two terminals:
 
 **1. Backend (FastAPI):**
 ```bash
-PYTHONPATH=backend/site-packages:. python3 -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+# Binds to loopback only. To expose on your LAN (field tablets), set HOST=0.0.0.0 deliberately.
+HOST=127.0.0.1 PYTHONPATH=backend/site-packages:. python3 -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 **2. Frontend (Next.js):**

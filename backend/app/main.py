@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import logging
+import os
 
 from .config import settings
 from .database import init_databases
@@ -25,10 +26,22 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware for Next.js frontend
+# CORS middleware for Next.js frontend.
+# Origins are read from CORS_ORIGINS (comma-separated) in .env; defaults to the
+# local dev origins. A wildcard is intentionally not used because
+# allow_credentials=True would let any site make credentialed requests.
+_CORS_ORIGINS = [
+    o.strip()
+    for o in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:3000,http://127.0.0.1:3000",
+    ).split(",")
+    if o.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
