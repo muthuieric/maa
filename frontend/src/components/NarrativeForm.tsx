@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Send, Shield, Info, CheckCircle2, AlertCircle, Mic } from 'lucide-react';
 import { LanguageCode, translations } from '../lib/translations';
 import { saveOfflineNarrative } from '../lib/offlineStorage';
 import { ConsentModal } from './ConsentModal';
 import { PredictionResultCard, AnalysisData } from './PredictionResultCard';
 import { AudioRecorder } from './AudioRecorder';
+
+const FORM_STORAGE_KEY = 'nenoguard-narrative-form';
+
+type FormData = {
+  narrative: string;
+  language: 'Swahili' | 'Maa';
+  ageBand: string;
+  gender: string;
+  subCounty: string;
+  sourceOrg: string;
+  label: string;
+  consentGiven: boolean;
+};
 
 interface Props {
   currentLang: LanguageCode;
@@ -43,6 +56,52 @@ export const NarrativeForm: React.FC<Props> = ({ currentLang, onSubmissionSucces
     'Kajiado West',
   ];
 
+  // Load saved form data from localStorage on mount
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(FORM_STORAGE_KEY);
+      if (raw) {
+        const saved = JSON.parse(raw) as Partial<FormData>;
+        if (saved.narrative !== undefined) setNarrative(saved.narrative);
+        if (saved.language) setLanguage(saved.language);
+        if (saved.ageBand) setAgeBand(saved.ageBand);
+        if (saved.gender) setGender(saved.gender);
+        if (saved.subCounty) setSubCounty(saved.subCounty);
+        if (saved.sourceOrg) setSourceOrg(saved.sourceOrg);
+        if (saved.label) setLabel(saved.label);
+        if (saved.consentGiven !== undefined) setConsentGiven(saved.consentGiven);
+      }
+    } catch {}
+  }, []);
+
+  // Persist form data to localStorage on every change
+  const persistForm = useCallback(() => {
+    try {
+      const data: FormData = {
+        narrative,
+        language,
+        ageBand,
+        gender,
+        subCounty,
+        sourceOrg,
+        label,
+        consentGiven,
+      };
+      window.localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
+    } catch {}
+  }, [narrative, language, ageBand, gender, subCounty, sourceOrg, label, consentGiven]);
+
+  useEffect(() => {
+    persistForm();
+  }, [persistForm]);
+
+  // Clear saved form data on successful submission
+  const clearSavedForm = useCallback(() => {
+    try {
+      window.localStorage.removeItem(FORM_STORAGE_KEY);
+    } catch {}
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage(null);
@@ -79,6 +138,7 @@ export const NarrativeForm: React.FC<Props> = ({ currentLang, onSubmissionSucces
         });
         setNarrative('');
         setConsentGiven(false);
+        clearSavedForm();
         if (onSubmissionSuccess) onSubmissionSuccess();
       } catch (err: any) {
         setMessage({
@@ -111,6 +171,7 @@ export const NarrativeForm: React.FC<Props> = ({ currentLang, onSubmissionSucces
       });
       setNarrative('');
       setConsentGiven(false);
+      clearSavedForm();
       if (onSubmissionSuccess) onSubmissionSuccess();
     } catch (err: any) {
       // Fallback: If network request failed unexpectedly, cache offline
@@ -122,6 +183,7 @@ export const NarrativeForm: React.FC<Props> = ({ currentLang, onSubmissionSucces
         });
         setNarrative('');
         setConsentGiven(false);
+        clearSavedForm();
         if (onSubmissionSuccess) onSubmissionSuccess();
       } catch {
         setMessage({

@@ -164,7 +164,7 @@ export default function ValidationPage() {
             <div className="text-2xl font-extrabold text-slate-900 pt-1">
               {validationReport ? (validationReport.macro_f1 * 100).toFixed(1) + '%' : '...'}
             </div>
-            <p className="text-[11px] text-slate-500">Thesis Target: ≥ 75.0%</p>
+            <p className="text-[11px] text-slate-500">Target: ≥ 75.0%</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">

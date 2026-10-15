@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
 import { LanguageCode, translations } from '../lib/translations';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { SyncStatusBadge } from './SyncStatusBadge';
+import { useRole } from '../lib/role';
+import { Menu, X } from 'lucide-react';
 
 interface Props {
   currentLang: LanguageCode;
@@ -15,30 +15,11 @@ interface Props {
 }
 
 export const Navbar: React.FC<Props> = ({ currentLang, onLanguageChange, onSyncComplete }) => {
-  const pathname = usePathname();
   const t = translations[currentLang];
-  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close the mobile drawer whenever the route changes.
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  const { role } = useRole();
 
-  // One consistent label set used for BOTH desktop and mobile views.
-  const navLinks = [
-    { href: '/', label: t.navEntryShort },
-    { href: '/map', label: t.navMapShort },
-    { href: '/validation', label: t.navValidationShort },
-    { href: '/archive', label: t.navArchiveShort },
-    { href: '/export', label: t.navExportShort },
-  ];
-
-  const linkClasses = (isActive: boolean, isMobile = false) =>
-    `${isMobile ? 'w-full px-4 py-3 text-base' : 'px-3 py-2 text-sm'} block rounded-lg font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 ${
-      isActive
-        ? 'bg-savanna-50 text-savanna-900'
-        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-    }`;
+  const roleLabel = role === 'collect' ? 'Collect' : role === 'translate' ? 'Translate' : role === 'review' ? 'Review' : '';
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -46,6 +27,7 @@ export const Navbar: React.FC<Props> = ({ currentLang, onLanguageChange, onSyncC
         <div className="flex items-center justify-between h-16 gap-3">
 
           {/* Brand / Home */}
+
           <Link
             href="/"
             className="flex items-center gap-3 min-w-0 shrink-0 group"
@@ -64,61 +46,18 @@ export const Navbar: React.FC<Props> = ({ currentLang, onLanguageChange, onSyncC
             </div>
           </Link>
 
-          {/* Desktop navigation — text-only links, consistent labels */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={isActive ? 'page' : undefined}
-                  className={linkClasses(isActive)}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Utilities: sync status + language + mobile menu toggle */}
+          {/* Utilities: role badge + sync status + language */}
           <div className="flex items-center gap-2 shrink-0">
+            {role && (
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-savanna-800 text-white">
+                {roleLabel}
+              </span>
+            )}
             <SyncStatusBadge currentLang={currentLang} onSyncComplete={onSyncComplete} />
             <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
-            <button
-              type="button"
-              onClick={() => setMobileOpen((open) => !open)}
-              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav-menu"
-              className="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-savanna-500 transition-colors"
-            >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile navigation drawer — same labels as desktop */}
-      {mobileOpen && (
-        <div id="mobile-nav-menu" className="md:hidden border-t border-slate-100 bg-white">
-          <nav className="px-4 py-3 space-y-1 max-h-[70vh] overflow-y-auto" aria-label="Mobile navigation">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={isActive ? 'page' : undefined}
-                  className={linkClasses(isActive, true)}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      )}
     </header>
   );
 };

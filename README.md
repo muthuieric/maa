@@ -6,6 +6,21 @@ Narratives can be entered in **Swahili (Kiswahili)** or **Maa**, are classified 
 
 ---
 
+## Table of Contents
+
+1. [How It Works](#1-how-it-works)
+2. [How to Interact with This App](#2-how-to-interact-with-this-app)
+3. [Architecture](#3-architecture)
+4. [Project Structure](#4-project-structure)
+5. [API Endpoints](#5-api-endpoints)
+6. [Getting Started / Installation](#6-getting-started-installation)
+7. [English → Maasai Translation (optional)](#7-english--maasai-translation-optional)
+8. [Running Tests](#8-running-tests)
+9. [Tech Stack](#9-tech-stack)
+10. [Security & Consent](#10-security--consent)
+
+---
+
 ## 1. How It Works
 
 1. **Capture** — A field worker records a narrative through the web form. They pick the narrator's language (Swahili or Maa), age band, gender, sub-county, partner organisation, and a practice label, and confirm that the narrator has given informed consent. Audio capture with in-browser recording and transcription preview is available for narrators who speak rather than type.
@@ -25,27 +40,86 @@ Narratives can be entered in **Swahili (Kiswahili)** or **Maa**, are classified 
 - **Narrative explorer & audit archive** — Searchable repository with sub-county filters and verifiable consent records.
 - **Offline queue** — IndexedDB-backed caching with automatic background sync on reconnection.
 - **Consent withdrawal** — Consent can be withdrawn after the fact via the ethics API, which removes the associated record.
+- **Form persistence** — Narrative form data is persisted to `localStorage` (key: `nenoguard-narrative-form`). If you navigate away and return, your input is restored. Data clears automatically on successful submission.
 
 ---
 
-## 2. Architecture
+## 2. How to Interact with This App
 
-- **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS, Lucide icons.
+### Opening the app
+
+Once both servers are running, open **http://localhost:3000** in your browser.
+
+### Navigation
+
+The top navigation bar has been intentionally simplified. It contains only:
+- **Brand / NG logo** — returns you to the home page (role picker). Clicking it stays on `/` (no auto-redirect).
+- **Role badge** — shows your current role context.
+- **Sync status badge** — shows online/offline state and offline queue depth.
+- **Language switcher** — toggle between English, Swahili, and Maa.
+
+All desktop and mobile navigation links (Collect Data, Translate, Review, Map, Validation, Archive, Export) have been **removed** from the navbar and mobile drawer. To reach any view, navigate directly by typing the URL path:
+
+| View | URL path | What it does |
+|------|----------|--------------|
+| Home / Role picker | `/` | Landing page; shows role picker |
+| Collect Data | `/collect` | Narrative entry form with consent gate and NLP analysis |
+| Translate | `/translate` | English → Maasai translation tool |
+| Review | `/review` | Review and annotate predictions |
+| Map | `/map` | Geographic heatmap of risk and practice prevalence |
+| Validation | `/validation` | Agreement metrics (Cohen's Kappa, Macro F1) and batch import |
+| Archive | `/archive` | Searchable narrative explorer with filters |
+| Export | `/export` | CSV / JSON download portal |
+
+### Submitting a narrative (Collect Data)
+
+1. Go to `http://localhost:3000/collect`.
+2. Enter the narrative text in Swahili or Maa.
+3. Select language, age band, gender, sub-county, source organisation, and practice label.
+4. Check the informed-consent box (mandatory — submissions without consent are rejected).
+5. Submit. The NLP analysis result appears immediately below the form.
+
+### Form data persistence
+
+If you fill out part of the Collect Data form and navigate away, your input is saved to `localStorage`. When you return to `/collect`, the form repopulates with what you entered. Data clears automatically after a successful submission.
+
+### Validation page
+
+Go to `http://localhost:3000/validation` to see real-time agreement metrics across all stored narratives: total evaluated, accuracy, macro F1, Cohen's Kappa, per-class precision/recall/F1, and a confusion matrix. You can also load a sample batch or upload your own annotated JSON for batch validation.
+
+**Note:** The Validation page fetches metrics from the backend at `/api/narratives/validation-report`. If the backend is not running, the page will show `0` silently (no error banner). Start the backend first (see Installation below).
+
+### Archive, Export, Map
+
+- **Archive** (`/archive`): search and filter stored narratives by language, sub-county, category, or keyword.
+- **Export** (`/export`): download all narratives as CSV or JSON.
+- **Map** (`/map`): geographic heatmap of risk and practice prevalence by sub-county.
+
+---
+
+## 3. Architecture
+
+- **Frontend:** Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Lucide icons.
 - **Backend:** FastAPI (Python 3.12), Pydantic v2, Uvicorn async ASGI server.
 - **NLP engine:** Multilingual classification with domain-specific morphological lexicons for Swahili and Maa.
 - **Hybrid storage:**
-  - **PostgreSQL (SQL)** — Relational metadata (`age_band`, `gender`, `sub_county`, `source_org`, `consent_given`, `timestamp`).
-  - **MongoDB (NoSQL)** — Narrative text, model predictions, confidence scores, detected dialect markers, discourse stances.
-  - **Automatic local fallback** — Gracefully falls back to SQLite and a local JSON document store when the live database daemons are not running (useful for local development and inspection).
+  - **PostgreSQL (SQL)** — Relational metadata (`age_band`, `gender`, `sub_county`, `source_org`, `consent_given`, `timestamp`). Falls back to SQLite if PostgreSQL is unavailable.
+  - **MongoDB (NoSQL)** — Narrative text, model predictions, confidence scores, detected dialect markers, discourse stance, cultural context notes. Falls back to local JSON if MongoDB is unavailable.
 - **Orchestration:** Docker Compose multi-container setup.
+- **Form persistence:** `localStorage` on the frontend; `IndexedDB` offline queue with automatic background sync.
 
 ---
 
-## 3. Project Structure
+## 4. Project Structure
 
 ```
 ├── docker-compose.yml              # Postgres, MongoDB, FastAPI, Next.js
 ├── run-dev.sh                      # Local launcher (starts both servers)
+├── .env.example                    # Environment template (copy to .env)
+├── .env                            # Local secrets — gitignored, never commit
+├── README.md                       # This file
+├── DESIGN.md                       # UI/UX design specification
+├── harmful-practice-nlp-tool.md    # NLP tool documentation
 ├── backend/
 │   ├── app/
 │   │   ├── main.py                 # FastAPI app, CORS, lifespan, legacy routes
@@ -65,20 +139,25 @@ Narratives can be entered in **Swahili (Kiswahili)** or **Maa**, are classified 
 │   ├── tests/
 │   │   └── test_api.py             # API, consent-gate, and NLP tests
 │   ├── Dockerfile
-│   └── requirements.txt
+│   ├── requirements.txt
+│   ├── narratives_meta.db          # SQLite fallback database (local dev)
+│   └── narratives_docs.json        # JSON fallback document store (local dev)
 └── frontend/
     ├── src/
     │   ├── app/
-    │   │   ├── page.tsx            # Narrative entry page
-    │   │   ├── map/page.tsx        # Geographic heatmap view
-    │   │   ├── validation/page.tsx # Field validation & batch upload
+    │   │   ├── page.tsx            # Home / role picker
+    │   │   ├── collect/page.tsx    # Narrative entry form
+    │   │   ├── translate/page.tsx  # English → Maasai translation
+    │   │   ├── review/page.tsx     # Review and annotate
+    │   │   ├── map/page.tsx        # Geographic heatmap
+    │   │   ├── validation/page.tsx # Validation metrics & batch import
     │   │   ├── archive/page.tsx    # Searchable narrative explorer
     │   │   ├── export/page.tsx     # CSV / JSON download portal
     │   │   ├── layout.tsx
     │   │   └── globals.css
     │   ├── components/
     │   │   ├── Navbar.tsx           # Navigation, language switcher, sync badge
-    │   │   ├── NarrativeForm.tsx    # Bilingual narrative input form
+    │   │   ├── NarrativeForm.tsx    # Bilingual narrative input form (+ localStorage persistence)
     │   │   ├── ConsentModal.tsx     # Informed-consent explanation
     │   │   ├── LanguageSwitcher.tsx # Trilingual selector (EN / SW / MAA)
     │   │   ├── SyncStatusBadge.tsx  # Real-time online/offline indicator
@@ -95,7 +174,7 @@ Narratives can be entered in **Swahili (Kiswahili)** or **Maa**, are classified 
 
 ---
 
-## 4. API Endpoints
+## 5. API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -124,7 +203,7 @@ Submissions lacking explicit informed consent are rejected with HTTP 400:
 
 ---
 
-## 5. Getting Started
+## 6. Getting Started / Installation
 
 ### Configuration (required — secrets are never committed)
 
@@ -199,7 +278,7 @@ Once the app is open:
 
 - Use the **language switcher** (top right) to toggle between English, Swahili, and Maa.
 - Fill in the narrative form on the home page and confirm consent to submit; the analysis result appears immediately below the form.
-- Use the top navigation to reach the **Map** (geographic heatmap), **Validation** (agreement metrics and batch upload), **Archive** (search and filter past narratives), and **Export** (CSV/JSON download) views.
+- Navigate directly by URL to other views (navbar links were removed): `/collect`, `/translate`, `/review`, `/map`, `/validation`, `/archive`, `/export`.
 - If the network drops, submissions are queued locally and sync automatically when you are back online — the navbar badge shows the connection state and queue depth.
 
 ---
@@ -312,4 +391,37 @@ weights cached locally), opt in explicitly:
 ```bash
 RUN_MODEL_TESTS=1 PYTHONPATH=backend/site-packages:. python3 -m backend.tests.test_translate
 ```
+
+---
+
+## 9. Tech Stack
+
+| Layer | Technology | Version |
+|---|---|---|
+| Frontend framework | Next.js | 15.2.3 |
+| UI library | React | 19.x |
+| Language | TypeScript | 5.3.x |
+| Styling | Tailwind CSS | 3.4.x |
+| Icons | Lucide React | 0.475.x |
+| Offline storage | idb (IndexedDB) | 8.x |
+| Backend framework | FastAPI | 0.110.x |
+| ASGI server | Uvicorn | 0.28.x |
+| Data validation | Pydantic | 2.6.x |
+| Python runtime | Python | 3.12 |
+| NLP / ML | transformers, torch | 4.38.x / 2.2.x |
+| Translation adapter | PEFT (LoRA) | 0.19.x |
+| SQL database | PostgreSQL (with SQLite fallback) | 16 |
+| NoSQL database | MongoDB (with JSON fallback) | 7 |
+| Container orchestration | Docker Compose | 3.8 |
+
+---
+
+## 10. Security & Consent
+
+- **Consent is mandatory.** No narrative is stored or analysed without `consent_given: true`.
+- **Pseudonymisation.** Narrative text is separated from metadata; records receive a pseudonymised token (`NG-NAR-XXXXXXXX`).
+- **Consent audit ledger.** Every consent record is cryptographically fingerprinted (SHA-256) and auditable via `/api/ethics/audit-ledger`.
+- **Right to be forgotten.** Consent can be withdrawn via `/api/ethics/withdraw-consent/{narrative_id}`, which purges the record.
+- **Database binding.** PostgreSQL and MongoDB bind to `127.0.0.1` only in Docker Compose — never exposed to the network.
+- **Secrets.** `.env` is gitignored. Rotate any credential that was previously committed.
 

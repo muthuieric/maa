@@ -7,7 +7,7 @@ import { LanguageCode } from '../lib/translations';
 type Lang = 'en' | 'sw' | 'maa';
 interface Props { currentLang: LanguageCode | Lang; }
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = 'http://localhost:3000';
 const TITLES: Record<string, string> = {
   en: 'English to Maasai Translator (AI)',
   sw: 'Mkalimani wa AI: Kiingereza kwenda Maa',

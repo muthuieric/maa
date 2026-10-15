@@ -23,7 +23,13 @@ def _load_dotenv(path: Path) -> None:
 
 
 # Repo-root .env (two levels up from backend/app/), if present.
-_load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+_load_dotenv(_REPO_ROOT / ".env")
+
+# Absolute fallback storage paths, anchored at the repo root so the backend
+# finds the same data files no matter which CWD uvicorn starts from.
+_SQLITE_DEFAULT = str(_REPO_ROOT / "backend" / "narratives_meta.db")
+_JSON_DEFAULT = str(_REPO_ROOT / "backend" / "narratives_docs.json")
 
 
 class Settings(BaseModel):
@@ -45,9 +51,12 @@ class Settings(BaseModel):
     MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://localhost:27017/narratives_db")
     MONGO_DB: str = os.getenv("MONGO_DB", "narratives_db")
     
-    # Local fallback storage paths (when live external DB servers are unavailable)
-    SQLITE_PATH: str = os.getenv("SQLITE_PATH", "backend/narratives_meta.db")
-    JSON_DOCS_PATH: str = os.getenv("JSON_DOCS_PATH", "backend/narratives_docs.json")
+    # Local fallback storage paths (when live external DB servers are unavailable).
+    # Absolute (anchored at repo root) so the backend finds the same files no
+    # matter which working directory uvicorn is started from. Env overrides may
+    # still be relative — those resolve against the process CWD as before.
+    SQLITE_PATH: str = os.getenv("SQLITE_PATH", _SQLITE_DEFAULT)
+    JSON_DOCS_PATH: str = os.getenv("JSON_DOCS_PATH", _JSON_DEFAULT)
     
     # Ethical Consent Requirement
     ENFORCE_STRICT_CONSENT: bool = True

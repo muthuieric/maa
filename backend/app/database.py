@@ -52,8 +52,15 @@ def init_databases():
     except Exception as e:
         logger.warning(f"PostgreSQL connection failed ({e}). Using SQLite fallback.")
         _use_sqlite_fallback = True
-        os.makedirs(os.path.dirname(settings.SQLITE_PATH), exist_ok=True)
-        conn = sqlite3.connect(settings.SQLITE_PATH)
+        # Never create an empty DB in a stray CWD: resolve to absolute first so
+        # a misconfigured SQLITE_PATH can't silently hide the real data file.
+        sqlite_path = os.path.abspath(settings.SQLITE_PATH)
+        parent = os.path.dirname(sqlite_path)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+        if sqlite_path != os.path.abspath(settings.SQLITE_PATH):
+            logger.info(f"Resolved SQLite path to {sqlite_path}")
+        conn = sqlite3.connect(sqlite_path)
         with conn:
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS narrative_metadata (

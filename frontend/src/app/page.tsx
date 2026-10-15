@@ -2,44 +2,54 @@
 
 import React, { useState } from 'react';
 import { Navbar } from '../components/Navbar';
-import { TranslatorCard } from '../components/TranslatorCard';
-import { NarrativeForm } from '../components/NarrativeForm';
+import { useRole } from '../lib/role';
 import { LanguageCode, translations } from '../lib/translations';
-import { BookOpen, ShieldCheck, Cpu, Globe2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
   const [currentLang, setCurrentLang] = useState<LanguageCode>('en');
   const t = translations[currentLang];
+  const { role, setRole } = useRole();
+  const router = useRouter();
 
   return (
     <>
       <Navbar currentLang={currentLang} onLanguageChange={setCurrentLang} />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-8">
-        {/* Practical Field Banner */}
         <section className="bg-savanna-900 text-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 rounded-full text-xs font-semibold backdrop-blur text-savanna-100">
-              <Globe2 className="w-3.5 h-3.5" />
-              <span>Narok & Kajiado Counties • Field Narrative Monitor</span>
-            </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
               {t.appTitle}
             </h1>
             <p className="text-sm sm:text-base text-savanna-200 leading-relaxed">
-              Record, transcribe, and analyze community narratives in Swahili and Maa to detect early warning signals of FGM and child marriage, identify discourse stance, and coordinate rapid response with local community monitors.
+              Choose your role to continue.
             </p>
           </div>
         </section>
 
-        {/* Narrative Entry Form Component */}
-        <section>
-          <NarrativeForm currentLang={currentLang} />
-        </section>
-
-        {/* Live English -> Maasai AI translator */}
-        <section>
-          <TranslatorCard currentLang={currentLang} />
+        <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <button
+            onClick={() => { setRole('collect'); router.push('/collect'); }}
+            className="border border-slate-200 rounded-xl p-8 text-left hover:bg-slate-50 hover:border-savanna-400 transition-colors"
+          >
+            <h3 className="font-bold text-slate-900 mb-2">Collect Data</h3>
+            <p className="text-sm text-slate-600">Record and submit community narratives.</p>
+          </button>
+          <button
+            onClick={() => { setRole('translate'); router.push('/translate'); }}
+            className="border border-slate-200 rounded-xl p-8 text-left hover:bg-slate-50 hover:border-savanna-400 transition-colors"
+          >
+            <h3 className="font-bold text-slate-900 mb-2">Translate</h3>
+            <p className="text-sm text-slate-600">English to Maasai AI translation.</p>
+          </button>
+          <button
+            onClick={() => { setRole('review'); router.push('/review'); }}
+            className="border border-slate-200 rounded-xl p-8 text-left hover:bg-slate-50 hover:border-savanna-400 transition-colors"
+          >
+            <h3 className="font-bold text-slate-900 mb-2">Review</h3>
+            <p className="text-sm text-slate-600">Map, validation, archive, export.</p>
+          </button>
         </section>
       </main>
 

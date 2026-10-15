@@ -18,3 +18,9 @@ narratives_docs.json
 # Downloaded translation model weights (~3.5 GB) — never commit
 backend/models/
 
+
+backend/models/
+backend/backend/models/
+*.safetensors
+*.bin
+.locks/
