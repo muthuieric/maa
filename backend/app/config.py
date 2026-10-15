@@ -52,5 +52,28 @@ class Settings(BaseModel):
     # Ethical Consent Requirement
     ENFORCE_STRICT_CONSENT: bool = True
 
+    # English -> Maasai Translation (NLLB + LoRA adapter)
+    # The adapter is a PEFT LoRA on facebook/nllb-200-distilled-600M.
+    # Nothing is downloaded or loaded at startup; see nlp/translator.py.
+    TRANSLATOR_ENABLED: bool = os.getenv("TRANSLATOR_ENABLED", "true").lower() in (
+        "1", "true", "yes", "on",
+    )
+    TRANSLATION_BASE_MODEL: str = os.getenv(
+        "TRANSLATION_BASE_MODEL", "facebook/nllb-200-distilled-600M"
+    )
+    TRANSLATION_ADAPTER_MODEL: str = os.getenv(
+        "TRANSLATION_ADAPTER_MODEL",
+        "KnoxDevelopers/English-to-Maasai-language-translation-LoRA",
+    )
+    # Source/target language codes understood by the NLLB tokenizer.
+    TRANSLATION_SRC_LANG: str = os.getenv("TRANSLATION_SRC_LANG", "eng_Latn")
+    TRANSLATION_TGT_LANG: str = os.getenv("TRANSLATION_TGT_LANG", "mas_Latn")
+    # float32 is safest for output quality; use bfloat16 to roughly halve RAM use
+    # on CPU-only machines. float16 is NOT recommended on CPU (slow/unsupported).
+    TRANSLATION_DTYPE: str = os.getenv("TRANSLATION_DTYPE", "float32")
+    TRANSLATION_MAX_NEW_TOKENS: int = int(os.getenv("TRANSLATION_MAX_NEW_TOKENS", 128))
+    # Local snapshot directory for the downloaded base model + adapter.
+    TRANSLATION_CACHE_DIR: str = os.getenv("TRANSLATION_CACHE_DIR", "backend/models")
+
 settings = Settings()
 

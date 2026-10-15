@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Navbar } from '../components/Navbar';
+import { TranslatorCard } from '../components/TranslatorCard';
 import { NarrativeForm } from '../components/NarrativeForm';
 import { LanguageCode, translations } from '../lib/translations';
 import { BookOpen, ShieldCheck, Cpu, Globe2 } from 'lucide-react';
@@ -34,6 +35,11 @@ export default function HomePage() {
         {/* Narrative Entry Form Component */}
         <section>
           <NarrativeForm currentLang={currentLang} />
+        </section>
+
+        {/* Live English -> Maasai AI translator */}
+        <section>
+          <TranslatorCard currentLang={currentLang} />
         </section>
       </main>
 

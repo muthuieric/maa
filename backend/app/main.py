@@ -47,7 +47,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from .routers import narratives, export, stats, ethics, lexicon_router
+from .routers import narratives, export, stats, ethics, lexicon_router, translate
 
 # Include API v1 Routers
 app.include_router(narratives.router, prefix=settings.API_V1_STR)
@@ -55,9 +55,31 @@ app.include_router(export.router, prefix=settings.API_V1_STR)
 app.include_router(stats.router, prefix=settings.API_V1_STR)
 app.include_router(ethics.router, prefix=settings.API_V1_STR)
 app.include_router(lexicon_router.router, prefix=settings.API_V1_STR)
+app.include_router(translate.router, prefix=settings.API_V1_STR)
 
 from .schemas import NarrativeSubmission, SubmitResponse
 from fastapi import Query
+
+from .nlp.translator import check_availability as _check_translation
+
+
+def _translation_summary() -> dict:
+    """Compact translation capability report for the health endpoint.
+
+    Never raises: if the translator stack is missing, health must still succeed.
+    """
+    try:
+        report = _check_translation()
+        return {
+            "available": report.get("available", False),
+            "base_model": report.get("base_model"),
+            "adapter_model": report.get("adapter_model"),
+            "weights_present": report.get("weights_present", False),
+            "reason": report.get("reason"),
+        }
+    except Exception as exc:  # pragma: no cover - defensive
+        return {"available": False, "reason": f"Translator check failed: {exc}"}
+
 
 # Backward-compatibility routes matching original paper specification (Figure 3 and Figure 4)
 @app.post("/submit", response_model=SubmitResponse, status_code=201, tags=["Paper Compatibility"])
@@ -81,5 +103,6 @@ async def health_check():
             "O1_bilingual_nlp": "Active (Transformer / Dialect Heuristics)",
             "O2_qualitative_validation": "Active (CBO Export & Annotation Matching)",
             "O3_ethical_model": "Active (Strict Consent Gated)"
-        }
+        },
+        "translation": _translation_summary()
     }

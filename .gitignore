@@ -15,3 +15,6 @@ __pycache__/
 *.db
 narratives_docs.json
 
+# Downloaded translation model weights (~3.5 GB) — never commit
+backend/models/
+

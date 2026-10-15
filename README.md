@@ -109,6 +109,9 @@ Narratives can be entered in **Swahili (Kiswahili)** or **Maa**, are classified 
 | `GET` | `/api/ethics/audit-ledger` | Read-only ledger of consent records |
 | `POST` | `/api/ethics/withdraw-consent/{narrative_id}` | Withdraw consent and delete the associated narrative |
 | `GET` | `/api/lexicon` | Cultural and dialect lexicon used by the classifier |
+| `GET` | `/api/translate/status` | Whether English→Maasai translation is available (deps/weights) |
+| `POST` | `/api/translate` | Translate English text into Maasai (NLLB + LoRA adapter) |
+| `POST` | `/api/translate/batch` | Translate up to 20 English texts per request |
 | `GET` | `/api/health` (alias: `/health`) | System health check |
 
 ### Consent enforcement
@@ -136,15 +139,19 @@ python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 
 `.env` is gitignored. Compose refuses to start if `POSTGRES_PASSWORD` is unset.
 
-> **If a credential was previously committed, rotate it.** Rewriting history with
-> `git filter-repo` and force-pushing is required, because the old value remains
-> readable in every clone and fork:
+> **If a credential was previously committed, rotate it.** Removing it from the
+> working tree is not enough — the old value stays readable in every clone and
+> fork until history is rewritten and force-pushed:
 
 ```bash
 pip install git-filter-repo
-git filter-repo --replace-text <(printf 'nenoguard_secure_pass_2026==>REDACTED\n')
+# Replace the literal old password with REDACTED across all of history.
+# (Do not paste the real value into this file — add it locally instead.)
+git filter-repo --replace-text <(printf 'YOUR_OLD_PASSWORD==>REDACTED\n')
 git push --force --all origin
 ```
+
+Then delete/revoke the old credential wherever else it was used.
 
 ### Option A: Docker Compose (recommended)
 
@@ -197,7 +204,74 @@ Once the app is open:
 
 ---
 
-## 6. Running Tests
+## 7. English → Maasai Translation (optional)
+
+NenoGuard can translate English text into Maa using a community-trained adapter:
+
+- **Base model:** `facebook/nllb-200-distilled-600M`
+- **Adapter:** [`KnoxDevelopers/English-to-Maasai-language-translation-LoRA`](https://huggingface.co/KnoxDevelopers/English-to-Maasai-language-translation-LoRA) — a PEFT LoRA (r=16, α=32), licence **cc-by-nc-4.0 (non-commercial)**
+
+### Enabling it
+
+The translation stack is optional and **lazy**: the API boots fine without it, and
+the model is only downloaded on the first translate request.
+
+```bash
+pip install -r backend/requirements.txt   # adds peft, safetensors, sentencepiece
+```
+
+Then check readiness — this does not download anything:
+
+```bash
+curl http://localhost:8000/api/translate/status
+```
+
+And translate:
+
+```bash
+curl -X POST http://localhost:8000/api/translate \
+  -H 'Content-Type: application/json' \
+  -d '{"text": "We must protect girls from harmful practices."}'
+```
+
+A CLI is also available for quick checks:
+
+```bash
+PYTHONPATH=backend/site-packages:. python3 scripts/translate_cli.py --status
+PYTHONPATH=backend/site-packages:. python3 scripts/translate_cli.py "Hello, how are you?"
+```
+
+### Hardware expectations
+
+The first request downloads **~3.5 GB** (base model + adapter) and takes minutes.
+Inference runs on CPU here, at roughly a few seconds per sentence, so it is
+dispatched to a thread pool rather than blocking the API event loop.
+
+On this machine (7.7 GB RAM, no GPU) reduce memory pressure with:
+
+```bash
+# in .env — roughly halves RAM use vs float32
+TRANSLATION_DTYPE=bfloat16
+```
+
+Useful knobs: `TRANSLATOR_ENABLED`, `TRANSLATION_SRC_LANG`, `TRANSLATION_TGT_LANG`,
+`TRANSLATION_MAX_NEW_TOKENS`, `TRANSLATION_CACHE_DIR` (default `backend/models/`,
+gitignored).
+
+### Accuracy caveat — read before relying on output
+
+The adapter was fine-tuned on a small parallel corpus. Reported metrics are
+**sacreBLEU 7.23** and **chrF++ 36.48**. In practice it captures the meaning and
+root vocabulary but varies in spelling and word forms from standard orthography.
+Direction is **English → Maasai only** (there is no Maa → English adapter here).
+
+Treat output as a drafting aid and have a Maa speaker review it before any
+community-facing use. Given the cc-by-nc-4.0 licence, it must not be used in
+commercial products.
+
+---
+
+## 8. Running Tests
 
 Run the backend test suite, which covers health checks, consent-gate enforcement, Swahili FGM analysis, Maa child-marriage analysis, advocacy stance detection, stats aggregation, data export, and batch import with agreement metrics:
 ```bash
@@ -222,5 +296,20 @@ test_backward_compatible_paper_routes()
 test_batch_import_and_cohens_kappa()
 print('All 8 backend & validation tests passed!')
 "
+```
+
+### Translation tests
+
+```bash
+PYTHONPATH=backend/site-packages:. python3 -m backend.tests.test_translate
+```
+
+These verify routing, the graceful `503` when `torch`/`transformers`/`peft` are
+absent, request validation, and the response contract — all **without**
+downloading the model. To exercise a real translation (requires the ~3.5 GB
+weights cached locally), opt in explicitly:
+
+```bash
+RUN_MODEL_TESTS=1 PYTHONPATH=backend/site-packages:. python3 -m backend.tests.test_translate
 ```
 
